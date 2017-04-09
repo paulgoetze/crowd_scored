@@ -7,8 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello CrowdScored!</title>
+    <title>CrowdScored</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
   </head>
 
   <body>
@@ -16,7 +18,13 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li>
+            <%= if @conn.request_path == page_path(@conn, :show) do %>
+              <a href="<%= page_path(@conn, :index)%>">CrowdScored</a>
+            <%else %>
+                <a href="<%= page_path(@conn, :show)%>">Start with your first bar</a>
+            <% end %>
+            </li>
           </ul>
         </nav>
         <span class="logo"></span>

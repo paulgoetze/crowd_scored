@@ -31,7 +31,7 @@ form.link, form.button {
   height: 71px;
   display: inline-block;
   margin-bottom: 1em;
-  background-image: url("/images/phoenix.png");
+  /*background-image: url("/images/phoenix.png");*/
   background-size: 519px 71px;
 }
 
@@ -79,4 +79,9 @@ form.link, form.button {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 2em;
 }

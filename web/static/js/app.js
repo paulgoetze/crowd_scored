@@ -19,3 +19,23 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+// Displaying musicXML sheets
+import { OSMD } from "opensheetmusicdisplay";
+import Dropzone from "dropzone";
+
+document.addEventListener('DOMContentLoaded', () => {
+  let container = document.getElementById('scores-container');
+  let osmd = new OSMD(container);
+
+  osmd
+    .load("/mxl/single-bar.mxl")
+    .then(
+      () => osmd.render(),
+      (error) => console.err(error)
+    )
+    .then(
+      () => console.log("Sheet music displayed."),
+    (error) => console.err(error)
+  );
+});

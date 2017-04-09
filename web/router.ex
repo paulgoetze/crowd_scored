@@ -2,7 +2,7 @@ defmodule CrowdScored.Router do
   use CrowdScored.Web, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -17,6 +17,9 @@ defmodule CrowdScored.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/transform", PageController, :show
+
+    resources "/scores", ScoreController, only: [:index, :create]
   end
 
   # Other scopes may use custom stacks.

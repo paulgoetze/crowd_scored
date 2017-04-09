@@ -1,1 +1,27 @@
 /* This file is for your main application css. */
+
+.scores-image {
+  padding: 1em;
+  border: 0.75em solid #eee;
+  margin-bottom: 0.5em;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.scores-image > img {
+  max-width: 100%;
+}
+.scores-mxl {
+  border: 0.75em solid #6a3866;
+  border-radius: 3px;
+}
+
+span.scores-image {
+  border: 5px solid #eee;
+  padding: 2px;
+}
+
+span.scores-mxl {
+  border: 5px solid #6a3866;
+  padding: 2px;
+}

@@ -1,0 +1,27 @@
+<div class="row">
+  <h2>Tschaikowski, Symphony No. 5</h2>
+</div>
+
+<div class="row">
+  <p>
+    Transfer the
+    <span class="scores-image">image of the bar</span>
+    below into a
+    <span class="scores-mxl">real score</span>.
+    </br>Ignore ties for now if there are any.
+  </p>
+</div>
+
+
+<div class="row scores-image">
+  <img src="/images/tschaikowski-symphony-5-cello-1.png"></img>
+</div>
+
+<div class="row scores-mxl">
+  <div id="scores-container"></div>
+
+  <%= form_for @conn, score_path(@conn, :create), [class: "dropzone", method: :post, as: :score, multipart: true], fn _f -> %>
+    <div id="fallback"></div>
+    <input name="file" type="file"/>
+  <% end %>
+</div>
