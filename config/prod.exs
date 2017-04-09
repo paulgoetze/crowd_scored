@@ -19,6 +19,13 @@ config :crowd_scored, CrowdScored.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Database
+config :crowd_scored, CrowdScored.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20"),
+  ssl: true
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
